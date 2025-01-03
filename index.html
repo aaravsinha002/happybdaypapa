@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Dad!</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #f7cac9, #92a8d1);
+      color: #333;
+    }
+    h1 {
+      margin-top: 50px;
+      font-size: 3rem;
+      color: #e74c3c;
+      animation: pop-in 1.5s ease-in-out;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-top: -10px;
+    }
+    button {
+      padding: 15px 25px;
+      font-size: 1.2rem;
+      background-color: #e67e22;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+    button:hover {
+      background-color: #d35400;
+      transform: scale(1.1);
+    }
+    #confetti {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .confetti-piece {
+      position: absolute;
+      width: 10px;
+      height: 20px;
+      background-color: #ecf0f1;
+      opacity: 0.8;
+      transform-origin: center;
+      animation: fall 3s linear infinite, rotate 1.5s ease-in-out infinite;
+    }
+    @keyframes fall {
+      0% {
+        transform: translateY(-100vh);
+      }
+      100% {
+        transform: translateY(100vh);
+      }
+    }
+    @keyframes rotate {
+      0%, 100% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(180deg);
+      }
+    }
+    @keyframes pop-in {
+      0% {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Happy Birthday, Dad! 🎉</h1>
+  <h2>You're the best dad ever!</h2>
+  <button onclick="showConfetti()">Click for a Surprise!</button>
+  <div id="confetti"></div>
+
+  <script>
+    function createConfettiPiece() {
+      const confettiPiece = document.createElement('div');
+      confettiPiece.className = 'confetti-piece';
+      confettiPiece.style.left = `${Math.random() * 100}vw`;
+      confettiPiece.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+      confettiPiece.style.animationDuration = `${Math.random() * 2 + 3}s`;
+      document.getElementById('confetti').appendChild(confettiPiece);
+
+      setTimeout(() => confettiPiece.remove(), 5000);
+    }
+
+    function showConfetti() {
+      for (let i = 0; i < 100; i++) {
+        createConfettiPiece();
+      }
+      alert('🎂 Wishing you a day full of love, laughter, and joy! 🎂');
+    }
+  </script>
+</body>
+</html>
