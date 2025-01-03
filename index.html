@@ -10,8 +10,10 @@
       text-align: center;
       margin: 0;
       padding: 0;
-      background: url('IMG_0198.jpeg') no-repeat center center fixed;
       background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       color: white;
     }
     h1 {
@@ -89,28 +91,27 @@
 </head>
 <body>
   <h1>Happy Birthday Papa!!! 🎉</h1>
-  <h2>I hope you have a super awesome birthday! Also, thank you for being such a super niee supportive person! PS: try reloading the page!</h2>
+  <h2>I hope you have a super awesome birthday! Also, thank you for being such a super nice supportive person! PS: try reloading the page!</h2>
   <button onclick="showConfetti()">Click for a Surprise!</button>
   <div id="confetti"></div>
 
   <script>
+    // Array of image URLs
+    const images = [
+      'IMG_0198.jpeg',
+      'IMG_0199.jpeg',
+      'IMG_0200.jpeg',
+      'IMG_0201.jpeg',
+      'IMG_0202.jpeg'
+    ];
+
+    // Select a random image
+    const randomImage = images[Math.floor(Math.random() * images.length)];
+
+    // Set the background image
+    document.body.style.backgroundImage = `url('${randomImage}')`;
+
     function createConfettiPiece() {
       const confettiPiece = document.createElement('div');
       confettiPiece.className = 'confetti-piece';
-      confettiPiece.style.left = `${Math.random() * 100}vw`;
-      confettiPiece.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
-      confettiPiece.style.animationDuration = `${Math.random() * 2 + 3}s`;
-      document.getElementById('confetti').appendChild(confettiPiece);
-
-      setTimeout(() => confettiPiece.remove(), 5000);
-    }
-
-    function showConfetti() {
-      for (let i = 0; i < 100; i++) {
-        createConfettiPiece();
-      }
-      alert('I hope you have a super amazing birthday! Thank you for being such a super amazing dad who loves me and helps me and support sme whenever I need it. You are the best dad ever!');
-    }
-  </script>
-</body>
-</html>
+      confettiPiece.style.left = `${Math.random() * 100}
