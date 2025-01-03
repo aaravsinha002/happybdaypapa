@@ -3,17 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy birthday, papa!!!!</title>
+  <title>Happy Birthday Dad!</title>
   <style>
     body {
       font-family: 'Arial', sans-serif;
       text-align: center;
       margin: 0;
       padding: 0;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
+      background: url('IMG_0198.jpeg') no-repeat center center fixed;
+      background-size: cover; /* Ensures the image covers the entire screen */
       color: white;
     }
     h1 {
@@ -90,27 +88,12 @@
   </style>
 </head>
 <body>
-  <h1>Happy Birthday Papa!!! 🎉</h1>
-  <h2>I hope you have a super awesome birthday! Also, thank you for being such a super nice supportive person!!</h2>
+  <h1>Happy Birthday, Dad! 🎉</h1>
+  <h2>You're the best dad ever!</h2>
   <button onclick="showConfetti()">Click for a Surprise!</button>
   <div id="confetti"></div>
 
   <script>
-    // Array of image URLs
-    const images = [
-      'IMG_0198.jpeg',
-      'IMG_0199.jpeg',
-      'IMG_0200.jpeg',
-      'IMG_0201.jpeg',
-      'IMG_0202.jpeg'
-    ];
-
-    // Select a random image
-    const randomImage = images[Math.floor(Math.random() * images.length)];
-
-    // Set the background image
-    document.body.style.backgroundImage = `url('${randomImage}')`;
-
     function createConfettiPiece() {
       const confettiPiece = document.createElement('div');
       confettiPiece.className = 'confetti-piece';
@@ -126,7 +109,7 @@
       for (let i = 0; i < 100; i++) {
         createConfettiPiece();
       }
-      alert('I hope you have a super amazing birthday! Thank you for being such a super amazing dad who loves me and helps me and supports me whenever I need it. You are the best dad ever!');
+      alert('🎂 Wishing you a day full of love, laughter, and joy! 🎂');
     }
   </script>
 </body>
